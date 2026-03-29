@@ -1,7 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep -r \"next-themes\\\\|ThemeProvider\\\\|dark:\" /Users/asifandmalihasmacbook/Downloads/uigen/src --include=*.tsx --include=*.ts -l)",
+      "Bash(grep -r \"next-themes\\|ThemeProvider\\|dark:\" /Users/asifandmalihasmacbook/Downloads/uigen/src --include=*.tsx --include=*.ts -l)",
       "Bash(npx vitest:*)",
       "Bash(npm audit:*)",
       "Bash(npm install:*)",
@@ -9,6 +9,19 @@
       "mcp__playwright__browser_navigate",
       "mcp__playwright__browser_take_screenshot",
       "mcp__playwright__browser_evaluate"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Grep",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /Users/asifandmalihasmacbook/Downloads/uigen/.claude/hooks/read_hook.js"
+          }
+        ]
+      }
     ]
   }
 }
